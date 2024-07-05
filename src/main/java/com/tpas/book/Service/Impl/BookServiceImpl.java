@@ -27,7 +27,7 @@ public class BookServiceImpl implements BookService {
             throw new ResourceNotFoundException("Book id is required!!");
         }
 
-        Book updateBook = this.bookRepo.findById(bookId).orElseThrow(() -> new ResourceNotFoundException("Book not found with id: " + book.getId()));
+        Book updateBook = this.bookRepo.findById(bookId).orElseThrow(() -> new ResourceNotFoundException("Book not found with id: " + bookId));
 
         updateBook.setTitle(book.getTitle());
         updateBook.setAuthor(book.getAuthor());
